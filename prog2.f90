@@ -5,6 +5,7 @@ program main_menu
         print*, "Select a program to run(1,2,3,4,...so on)"
         print*, "1. prog1"
         print*, "2. prog2"
+        print*, "3. prog3"
         print*, "============================================"
         read*, choice
 
@@ -13,6 +14,8 @@ program main_menu
                 call prog1()
         case (2)
                 call prog2()
+        case (3)
+                call prog3()
         case default
                 print*, "Invalid Choice"
         end select
@@ -39,4 +42,15 @@ subroutine prog2()
       stop
       end subroutine prog2
 
+subroutine prog3()
+        implicit none
+        character(len= 80):: a,b,c        
+        print*, "Enter 1st name: "
+        read*, a
+        print*, "Enter middle name: "
+        read*, b
+        c= trim(a)//trim(b)
+        print*,"Name is: ",c
+        STOP
+        end subroutine prog3
 end program main_menu
